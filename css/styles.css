@@ -29,7 +29,9 @@
 .section-title,
 .team-list,
 .portfolio-list,
-.footer-text {
+.footer-text,
+.icon-header,
+.image-text {
   margin: 0;
   padding: 0;
 }
@@ -60,14 +62,14 @@ ul {
 }
 
 .section-title {
-    font-size: 36px;
-    line-height: 1.11111;
-    margin-bottom: 72px;
+  font-size: 36px;
+  line-height: 1.11111;
+  margin-bottom: 72px;
 }
 
 .list-title {
-    font-size: 20px;
-    line-height: 1.2;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 .section,
@@ -80,39 +82,47 @@ ul {
 
 .nav-menu-link,
 .list-title {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .section-title,
 .list-title,
 .nav-menu-link {
-    color: var(--navyblue);
+  color: var(--navyblue);
 }
 
+
 /* Header */
+
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: inherit;
+}
 
 .header .container,
 .nav-menu-logo,
 .nav-menu,
 .contact {
-    display: flex;
-    gap: 40px;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-menu-link:hover,
 .contact-link:hover {
-    color: var(--ocean);
+  color: var(--ocean);
 }
 
 .nav-menu-link:active {
-    color: var(--ocean);
-    text-decoration-line: underline;
-    text-decoration-color: var(--ocean);
-    text-decoration-style: solid;
-    text-underline-offset: 18px;
-    text-decoration-thickness: 4px;
+  color: var(--ocean);
+  text-decoration-line: underline;
+  text-decoration-color: var(--ocean);
+  text-decoration-style: solid;
+  text-underline-offset: 18px;
+  text-decoration-thickness: 4px;
 }
 
 .header .container {
@@ -154,13 +164,23 @@ ul {
 }
 
 .page-flex {
-  background-color: var(--navyblue);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 600px;
   gap: 48px;
+}
+
+.page {
+  margin: 0 auto;
+  background-color: var(--grey);
+  background-image: linear-gradient(var(--grey)),
+    url(../images/people-office\ 1.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: 1440px;
 }
 
 .page-button {
@@ -184,6 +204,15 @@ ul {
 .list-item {
   width: 264px;
 }
+
+.section-icons-wrapper{
+  background-color: var(--cloud);
+  border: 1px solid var(--lightslate);
+  width: 264px;
+  height: 112px;
+  border-radius: 4px;
+  padding: 24px 100px;
+}
 /* team section */
 
 .team .container {
@@ -197,6 +226,9 @@ ul {
   justify-content: center;
 }
 
+.team-item:hover .team-icon-wrapper{
+  background-color: var(--ocean);
+}
 /* team and portfolio */
 
 .team-item,
@@ -208,11 +240,31 @@ ul {
 
 .team-text,
 .portfolio-text {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 32px;
-    margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+
+/* team and footer*/
+
+.team-icon-container,
+.footer-contact-icon {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-icon-wrapper,
+.icon-wrapper {
+  background-color: var(--iris);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 12px;
 }
 
 /* portfolio section */
@@ -224,10 +276,36 @@ ul {
   row-gap: 48px;
 }
 
+.image-effect{
+  position: relative;
+  overflow: hidden;
+}
+
+.image-text{
+  color: var(--cloud);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--iris);
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-effect:hover .image-text{
+  transform: translateY(0);
+}
+
 /* footer */
 
 footer {
   background-color: var(--navyblue);
+}
+.footer-flex{
+  display: flex;
+  flex-direction: row;
+  gap: 120px;
 }
 
 .footer-logo {
@@ -244,4 +322,20 @@ footer {
   width: 264px;
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.icon-header{
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.contact-icons{
+  width: 208px;
+  padding-top: 100px;
+}
+
+.icon-wrapper:hover, .icon-wrapper:active{
+  background-color: var(--green);
 }
